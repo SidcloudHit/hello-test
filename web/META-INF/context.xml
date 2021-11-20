@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/sas">
+  <ResourceLink auth="Container" global="sas" name="jdbc/sas" type="javax.sql.DataSource"/>
+</Context>
