@@ -318,7 +318,7 @@ or ant -Dj2ee.platform.classpath=&lt;server_classpath&gt; (where no properties f
                 <property location="${build.dir}/empty" name="empty.dir"/>
                 <mkdir dir="${empty.dir}"/>
                 <mkdir dir="@{apgeneratedsrcdir}"/>
-                <javac debug="@{debug}" deprecation="${javac.deprecation}" destdir="@{destdir}" encoding="${source.encoding}" excludes="@{excludes}" fork="${javac.fork}" includeantruntime="false" includes="@{includes}" source="${javac.source}" srcdir="@{srcdir}" target="${javac.target}">
+                
                     <src>
                         <dirset dir="@{gensrcdir}" erroronmissingdir="false">
                             <include name="*"/>
@@ -896,7 +896,7 @@ exists or setup the property manually. For example like this:
         </copy>
     </target>
     <target depends="init, deps-jar, -pre-pre-compile, -pre-compile, -copy-manifest, -copy-persistence-xml, -copy-webdir, library-inclusion-in-archive,library-inclusion-in-manifest" if="have.sources" name="-do-compile">
-        <webproject2:javac destdir="${build.classes.dir}" gensrcdir="${build.generated.sources.dir}"/>
+        
         <copy todir="${build.classes.dir}">
             <fileset dir="${src.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
         </copy>
